@@ -1,0 +1,106 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(244, 244, 244);
+}
+
+
+
+.container {
+  box-shadow: 0 4px 4px 4px rgba(216, 216, 216, 0.762);
+  border: 0.2px solid rgba(216, 216, 216, 0.762);
+  width: 70vw;
+  background: white;
+  margin-top: 10vh;
+}
+
+.titleholder {
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  padding: 3% 0;
+  font-size: 1.2rem;
+  margin: 0;
+  color: rgb(119, 119, 119);
+  font-weight: 600;
+  width: 90.1%;
+}
+
+.taskInputContainer{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.taskInput{
+  outline: none;
+  width: 90%;
+  border: none;
+  background: none;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding: 2% 0;
+
+}
+
+hr {
+  border: 0.5px solid rgba(222, 222, 222, 0.762);
+  margin: 0;
+}
+
+#refresh,
+#moreicon,
+.material-icons {
+  color: gray;
+  font-size: 1.2rem;
+  margin-right: 3%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+h3,input {
+  margin-left: 4% !important;
+}
+
+.list li {
+
+  padding: 1% 0;
+  border-bottom: 0.5px solid rgba(207, 207, 207, 0.762);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.list li p {
+  width: 87%;
+}
+
+input.check {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 2%;
+}
+
+.remove {
+  padding: 0;
+  height: 1rem;
+}
+
+.Clear {
+  width: 100%;
+  margin: 0;
+  padding: 2%;
+  text-align: center;
+  background: rgba(239, 239, 239, 0.887);
+  border: none;
+  color: rgb(97, 97, 97);
+  font-size: 1rem;
+}

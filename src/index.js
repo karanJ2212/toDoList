@@ -1,17 +1,21 @@
+import "./style.css";
 class UI {
   static displayTask() {
     const task = [
       {
         desc: "buy fruits",
-        id: 1,
+        index: 1,
+        completed: false,
       },
       {
         desc: "buy medicines",
-        id: 1,
+        index: 2,
+        completed: false,
       },
       {
         desc: "buy household",
-        id: 1,
+        index: 3,
+        completed: false,
       },
     ];
 
@@ -21,15 +25,13 @@ class UI {
   static addTasks(works) {
     const list = document.querySelector(".list");
     let html = ` <li class="listItems">
-    <input type="checkbox" name="select" id="" />
+    <input type="checkbox" name="select" id="" class="check" />
     <p class="title">${works.desc}</p>
-    <button class="button remove" id="${works.id}">Remove</button>
+    <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
   </li>`;
     list.insertAdjacentHTML("beforeend", html);
   }
 }
 
 //events
-document.getElementById("Enter").addEventListener("click", () => {
-  UI.displayTask();
-});
+document.addEventListener("DOMContentLoaded", UI.displayTask());
