@@ -8,11 +8,11 @@ class UI {
       },
       {
         desc: "buy medicines",
-        id: 1,
+        id: 2,
       },
       {
         desc: "buy household",
-        id: 1,
+        id: 3,
       },
     ];
 
