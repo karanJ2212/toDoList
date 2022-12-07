@@ -30,6 +30,4 @@ class UI {
 }
 
 //events
-document.getElementById("Enter").addEventListener("click", () => {
-  UI.displayTask();
-});
+document.addEventListener("DOMContentLoaded", UI.displayTask());
