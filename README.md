@@ -27,7 +27,7 @@
 
 # 📖 To Do List <a name="about-project"></a>
 
-This project is made with vanilla javascript. This is work in progress
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
