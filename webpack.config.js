@@ -12,10 +12,12 @@ module.exports = {
     }),
   ],
   output: {
-    filename: "main.js",
+    // filename: "main.js",
+    filename: "[name].js",
     // eslint-disable-next-line no-undef, no-unused-vars
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    publicPath: "/",
   },
   module: {
     rules: [
