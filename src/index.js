@@ -73,35 +73,7 @@ class Store {
 }
 
 //events
-document.addEventListener("DOMContentLoaded", () => {
-  UI.displayTask();
-
-  focus;
-
-  const taskInput = document.querySelectorAll(".taskDesc");
-
-  taskInput.forEach((inputtask) => {
-    inputtask.addEventListener("focus", (e) => {
-      e.preventDefault();
-      const { id } = e.currentTarget.parentElement;
-      document.getElementById(id).style.backgroundColor =
-        "rgba(242, 255, 0, 0.973)";
-    });
-  });
-
-  //focus out
-  taskInput.forEach((inputtask) => {
-    inputtask.addEventListener("focusout", (e) => {
-      e.preventDefault();
-      const { id } = e.currentTarget.parentElement;
-      document.getElementById(id).style.backgroundColor = "white";
-
-      const Storage1 = JSON.parse(localStorage.getItem("tasks")) || [];
-      Storage1[id - 1].desc = e.currentTarget.value;
-      localStorage.setItem("tasks", JSON.stringify(Storage1));
-    });
-  });
-});
+document.addEventListener("DOMContentLoaded", UI.displayTask());
 
 //add tasks from the input
 
@@ -124,31 +96,31 @@ document
 
 //editing and removing tasks
 
-// focus
+//focus
 
-// const taskInput = document.querySelectorAll(".taskDesc");
+const taskInput = document.querySelectorAll(".taskDesc");
 
-// taskInput.forEach((inputtask) => {
-//   inputtask.addEventListener("focus", (e) => {
-//     e.preventDefault();
-//     const { id } = e.currentTarget.parentElement;
-//     document.getElementById(id).style.backgroundColor =
-//       "rgba(242, 255, 0, 0.973)";
-//   });
-// });
+taskInput.forEach((inputtask) => {
+  inputtask.addEventListener("focus", (e) => {
+    e.preventDefault();
+    const { id } = e.currentTarget.parentElement;
+    document.getElementById(id).style.backgroundColor =
+      "rgba(242, 255, 0, 0.973)";
+  });
+});
 
-// //focus out
-// taskInput.forEach((inputtask) => {
-//   inputtask.addEventListener("focusout", (e) => {
-//     e.preventDefault();
-//     const { id } = e.currentTarget.parentElement;
-//     document.getElementById(id).style.backgroundColor = "white";
+//focus out
+taskInput.forEach((inputtask) => {
+  inputtask.addEventListener("focusout", (e) => {
+    e.preventDefault();
+    const { id } = e.currentTarget.parentElement;
+    document.getElementById(id).style.backgroundColor = "white";
 
-//     const Storage1 = JSON.parse(localStorage.getItem("tasks")) || [];
-//     Storage1[id - 1].desc = e.currentTarget.value;
-//     localStorage.setItem("tasks", JSON.stringify(Storage1));
-//   });
-// });
+    const Storage1 = JSON.parse(localStorage.getItem("tasks")) || [];
+    Storage1[id - 1].desc = e.currentTarget.value;
+    localStorage.setItem("tasks", JSON.stringify(Storage1));
+  });
+});
 
 //delete
 const delBtn = document.querySelectorAll(".fa-trash-can");
