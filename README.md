@@ -67,7 +67,7 @@ Clone this repository to your desired folder:
 
 - On the terminal run this command git clone https://github.com/karanJ2212/toDoList.git
 
-- Go to the repository folder using command prompt cd Awesome-Books
+- Go to the repository folder using command prompt cd toDoList
 
 - Install the dev dependencies for linters run npm install.
   --->
