@@ -18,16 +18,16 @@
         <i id="refresh" class="fa-solid fa-arrows-rotate"></i>
       </div>
       <hr>
-      <div class="taskInputContainer">
-        <input type="text" class="taskInput" placeholder="Enter Today's Tasks" />
+      <form action="" method="post" class="taskInputContainer">
+        <input type="text" class="taskInput" id="taskInput" placeholder="Enter Today's Tasks" />
         <i class="material-icons">&#xe31b</i>
         
-      </div>
+      </form>
       <hr>
      <ul class="list">
-        <li class="listItems">
+        <!-- <li class="listItems">
           <input type="checkbox" name="select" id="" class="check" />
-          <p class="title">todoList Project</p>
+          <input type="text" class="taskInput" id="" value="finish a game" />
           <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
         </li>
 
@@ -41,9 +41,9 @@
           <input type="checkbox" name="select" id="" class="check" />
           <p class="title">gym memership</p>
           <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
-        </li>
+        </li> -->
       </ul>
-      <button class="Clear">Clear All Completed Tasks</button>
+      <button class="Clear" id="clearAll">Clear All Completed Tasks</button>
     </div>
     <script src="./index.js"></script>
   </body>

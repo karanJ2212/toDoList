@@ -6,8 +6,6 @@ body {
   background: rgb(244, 244, 244);
 }
 
-
-
 .container {
   box-shadow: 0 4px 4px 4px rgba(216, 216, 216, 0.762);
   border: 0.2px solid rgba(216, 216, 216, 0.762);
@@ -30,13 +28,13 @@ h3 {
   width: 90.1%;
 }
 
-.taskInputContainer{
+form {
   display: flex;
-    flex-direction: row;
-    align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
 
-.taskInput{
+.taskInput {
   outline: none;
   width: 90%;
   border: none;
@@ -44,7 +42,6 @@ h3 {
   font-style: italic;
   font-size: 1.2rem;
   padding: 2% 0;
-
 }
 
 hr {
@@ -64,14 +61,15 @@ hr {
   display: flex;
   flex-direction: column;
   padding: 0;
+  margin-top: 0;
 }
 
-h3,input {
+h3,
+input {
   margin-left: 4% !important;
 }
 
 .list li {
-
   padding: 1% 0;
   border-bottom: 0.5px solid rgba(207, 207, 207, 0.762);
   font-size: 1rem;
@@ -103,4 +101,12 @@ input.check {
   border: none;
   color: rgb(97, 97, 97);
   font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.taskDesc.checked {
+  text-decoration: line-through;
 }
