@@ -28,7 +28,7 @@ h3 {
   width: 90.1%;
 }
 
-.taskInputContainer {
+form {
   display: flex;
   flex-direction: row;
   align-items: center;
