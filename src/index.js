@@ -1,23 +1,20 @@
 import "./style.css";
+// import { toDoTask } from "./modules/todo.js";
 
-class toDoTask {
-  constructor(desc, index, completed = false) {
-    this.desc = desc;
-    this.index = index;
-    this.completed = completed;
-  }
-}
+import Store from "./modules/Store.js";
+import toDoTask from "./modules/todo.js";
+// class toDoTask {
+//   constructor(desc, index, completed = false) {
+//     this.desc = desc;
+//     this.index = index;
+//     this.completed = completed;
+//   }
+// }
+
+//start ui class
 
 class UI {
   static displayTask() {
-    // const task = [
-    //   {
-    //     desc: "buy fruits",
-    //     index: 1,
-    //     completed: false,
-    //   },
-    //
-    // ];
     const Alltasks = Store.getTasksFromStore();
 
     Alltasks.forEach((individualTask) => UI.addTasksToList(individualTask));
@@ -29,7 +26,7 @@ class UI {
     <input type="checkbox" name="select" id="" class="check" />
     <input type="text" class="taskInput taskDesc" value="${individualTask.desc}" />
     <i id="moreicon" class="fa-solid fa-trash-can"></i>
-    
+
   </li>`;
     list.insertAdjacentHTML("beforeend", html);
   }
@@ -40,47 +37,18 @@ class UI {
     }
   }
 }
-
-class Store {
-  static getTasksFromStore() {
-    let tasks; //this will be array of objects
-    if (localStorage.getItem("tasks") === null) {
-      tasks = [];
-    } else {
-      tasks = JSON.parse(localStorage.getItem("tasks"));
-    }
-    return tasks;
-  }
-
-  static addTasksToStore(task) {
-    //task will be a object of class toDoTask
-    const obj = Store.getTasksFromStore();
-
-    obj.push(task);
-
-    localStorage.setItem("tasks", JSON.stringify(obj));
-  }
-  static removeTaskFromStore(id) {
-    const tasks = Store.getTasksFromStore();
-
-    tasks.forEach((task) => {
-      if (task.id === id) {
-        tasks.splice(id, 1);
-      }
-    });
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }
-}
+// end ui class
 
 //events
 document.addEventListener("DOMContentLoaded", UI.displayTask());
 
-//add tasks from the input
+// add tasks from the input
 
 document
   .querySelector(".taskInputContainer")
   .addEventListener("submit", (e) => {
     e.preventDefault();
+    // window.location.reload();
     let input = document.querySelector(".taskInput").value;
     let task = new toDoTask(input, Store.getTasksFromStore().length + 1, false);
 
@@ -92,9 +60,11 @@ document
 
     //clear field
     document.querySelector("#taskInput").value = "";
+    document.querySelector("#taskInput").focus();
+    window.location.reload();
   });
 
-//editing and removing tasks
+//editing
 
 //focus
 
@@ -119,6 +89,7 @@ taskInput.forEach((inputtask) => {
     const Storage1 = JSON.parse(localStorage.getItem("tasks")) || [];
     Storage1[id - 1].desc = e.currentTarget.value;
     localStorage.setItem("tasks", JSON.stringify(Storage1));
+    // window.location.reload();
   });
 });
 
@@ -126,24 +97,19 @@ taskInput.forEach((inputtask) => {
 const delBtn = document.querySelectorAll(".fa-trash-can");
 delBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    console.log(e.currentTarget.parentElement.id - 1);
     UI.removeTask(e.target);
     // Store.removeTaskFromStore(e.currentTarget.parentElement.id - 1);
     let webobj = JSON.parse(localStorage.getItem("tasks"));
+    let newid = 1;
+
     webobj.splice(e.currentTarget.parentElement.id - 1, 1);
+    if (webobj.length > 0) {
+      webobj.forEach((e) => {
+        e.index = newid;
+        newid += 1;
+      });
+    }
     localStorage.setItem("tasks", JSON.stringify(webobj));
+    window.location.reload();
   });
 });
-// remove task from UI
-
-// UI.removeTask(e.target);
-// Store.removeTaskFromStore(e.currentTarget.parentElement.id-1);
-
-// Remove task from store
-
-// inputtask.addEventListener("input", () => {
-//   const Storage1 = JSON.parse(localStorage.getItem("tasks")) || [];
-//   console.log(inputtask.value);
-//   Storage1[index].item = inputtask.value;
-//   localStorage.setItem("tasks", JSON.stringify(Storage1));
-// });
