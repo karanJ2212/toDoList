@@ -3,6 +3,7 @@ import "./style.css";
 
 import Store from "./modules/Store.js";
 import toDoTask from "./modules/todo.js";
+import { check } from "./modules/check.js";
 // class toDoTask {
 //   constructor(desc, index, completed = false) {
 //     this.desc = desc;
@@ -112,4 +113,29 @@ delBtn.forEach((btn) => {
     localStorage.setItem("tasks", JSON.stringify(webobj));
     window.location.reload();
   });
+});
+
+check();
+
+//checkbox
+
+const clearBtn = document.getElementById("clearAll");
+
+clearBtn.addEventListener("click", () => {
+  const Storage3 = JSON.parse(localStorage.getItem("tasks")) || [];
+  const notcompletedArr = Storage3.filter((chk) => chk.completed == false);
+
+  localStorage.setItem("tasks", JSON.stringify(notcompletedArr));
+  // window.location.reload();
+  let Storage4 = JSON.parse(localStorage.getItem("tasks"));
+  let newid = 1;
+
+  if (Storage4.length > 0) {
+    Storage4.forEach((e) => {
+      e.index = newid;
+      newid += 1;
+    });
+  }
+  localStorage.setItem("tasks", JSON.stringify(Storage4));
+  window.location.reload();
 });

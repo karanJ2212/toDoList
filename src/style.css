@@ -106,3 +106,7 @@ input.check {
 .hidden {
   display: none;
 }
+
+.taskDesc.checked {
+  text-decoration: line-through;
+}
