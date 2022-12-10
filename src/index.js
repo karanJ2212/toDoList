@@ -4,13 +4,6 @@ import "./style.css";
 import Store from "./modules/Store.js";
 import toDoTask from "./modules/todo.js";
 import { check } from "./modules/check.js";
-// class toDoTask {
-//   constructor(desc, index, completed = false) {
-//     this.desc = desc;
-//     this.index = index;
-//     this.completed = completed;
-//   }
-// }
 
 //start ui class
 
