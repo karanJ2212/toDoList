@@ -27,7 +27,7 @@
 
 # 📖 To Do List <a name="about-project"></a>
 
-
+This is a simple to do ist app that lets you add your daily tasks into a list. You can add or remove or modify your task, and you can mark the tasks as complete and delete completed tasks. This project is build using webpacks
 
 ## 🛠 Built With <a name="built-with"></a>
 
